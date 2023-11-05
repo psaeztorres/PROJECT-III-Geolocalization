@@ -76,8 +76,16 @@ ______________________
      
          In order to settle the best place were to locate our company we will see the average coordinates (avg(lon) and avg(len) of 
          all the companies we have found for each city. This will give us a starting point.
+         
          After realizing there are outter values of lon and lat values in the table it has been crated a function ("clean_coord") that
          removes those companies that are more than 100km (this value can be changed) from the city centre.
+         
+     5- FIRST MAPS: with all the info above we plot a map of each city to see where our situation would be and where are 
+         the startups and web/game companies
+         
+     6-
+         
+     
      
          
          

@@ -39,7 +39,7 @@ def merge_cities(df1, df2):
     return merged_df
 
 
-def clean_coord (df, city_lat, city_lon,radius=100):
+def clean_coord (df, city_lat, city_lon,radius=75):
     city_coords = (city_lat, city_lon)
     def is_within_radius(row,  city_lat, city_lon, radius_km=radius):
         point_coords = (row['lat'], row['lon'])
@@ -64,7 +64,7 @@ def get_avg_coordinates (city,city_lat, city_lon, *df):
     result = result.dropna(subset=['lon'])
     result = result[result['city1'] == city]
     result['city1'] = result['city1'].str.strip()
-    result = clean_coord (result, city_lat, city_lon,radius=100)
+    result = clean_coord (result, city_lat, city_lon,radius=75)
     avg_lat= result['lat'].mean()
     avg_lon= result['lon'].mean()
     return f"avg(lat) = {avg_lat}, avg_lon = {avg_lon}"
@@ -83,24 +83,3 @@ def df_city_coordinates (city,city_lat, city_lon, *df):
     result = clean_coord (result, city_lat, city_lon,radius=100)
     return result
 
-def calculate_centroid(city,city_lat, city_lon, *df):
-    result = pd.concat(list(df), axis=0, ignore_index=True)
-    result.drop(['number_of_employees','founded_year','total_money_raised','city2'],axis=1, inplace=True)
-    result = result.dropna(subset=['city1'])
-    result = result.dropna(subset=['lat'])
-    result = result.dropna(subset=['lon'])
-    result = result[result['city1'] == city]
-    result['city1'] = result['city1'].str.strip()
-    df = clean_coord (result, city_lat, city_lon,radius=100) 
-    
-    total_latitude = 0
-    total_longitude = 0
-
-    for index, row in df.iterrows():
-        total_latitude += row['lat']
-        total_longitude += row['lon']
-
-    centroid_latitude = total_latitude / len(df)
-    centroid_longitude = total_longitude / len(df)
-
-    return (centroid_latitude, centroid_longitude)

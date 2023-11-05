@@ -9,6 +9,12 @@ from pymongo import MongoClient
 client = MongoClient("localhost:27017")
 db = client["ironhack"]
 c = db.get_collection("companies")
+from dotenv import load_dotenv
+load_dotenv()
+import time
+token = os.getenv("token")
+
+
 
 def mongo_search (*cond):
     query = list(c.find({"$and": list(cond)}, projection= {"name":1,"category_code":1, "offices.city":1,'_id':0, "number_of_employees":1,'founded_year':1,
