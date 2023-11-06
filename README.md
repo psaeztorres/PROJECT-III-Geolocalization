@@ -47,7 +47,7 @@ ______________________
          and 3 of the requierements
       4-choose the best point to search in those cities for the rest of the requirements
       5-based on this location search for the rest of the requirements determining the distance from our proposal location
-      6-based on the distance ponderate each one with a ratio of importance and decide wich has the highest ratio
+      6-based on the distance and services available choose the best city
       
       
 ## 3- EXECUTION.
@@ -78,12 +78,23 @@ ______________________
          all the companies we have found for each city. This will give us a starting point.
          
          After realizing there are outter values of lon and lat values in the table it has been crated a function ("clean_coord") that
-         removes those companies that are more than 100km (this value can be changed) from the city centre.
+         removes those companies that are more than 75km from the city centre.
          
      5- FIRST MAPS: with all the info above we plot a map of each city to see where our situation would be and where are 
          the startups and web/game companies
          
-     6-
+     6-SEARCHING FOR THE REST OF THE WORKER'S WISHES:
+         It has been stablished 3 levels of search:
+         1-what should be in a radious of 500m sorted by distance. The venues searched are :Starbucks,vegan restaurant,school, 
+         Pet Grooming, bar,karaoke and the function used is 'queries_for_a_city' . After this query the dataframe returned is
+         transformed into a df of number of services and distance by using the function 'distance_venue_city'.
+         2-what should be in a radius of 10km which is the basketball stadium and  and in a distance of 50km which is an
+         International Aeroport. To make this queries it has been used the function requests_for_foursquare_relevance by 
+         changing the radius argument .
+         
+     7- With all the results obtained until now a city is chosen an a map with the different requirements plot by using
+         the function 'city_map'.
+         
          
      
      
