@@ -31,8 +31,60 @@ def mongo_search (*cond):
     return df
 
 
-def requests_for_foursquare (query, lat, lon, radius=700, limit=2):
+def requests_for_foursquare (query, lat, lon, radius=500, limit=5):
+    token = os.getenv("token")
+    url = f"https://api.foursquare.com/v3/places/search?query={query}&ll={lat}%2C{lon}&radius={radius}&sort=DISTANCE&limit={limit}"
 
+    headers = {
+        "accept": "application/json",
+        "Authorization": token
+    }
+    
+    try:
+        f4_answer = requests.get(url, headers=headers).json()
+    except:
+        print("no :(")
+    
+    answer_list = []
+    answer = f4_answer["results"]
+    
+    for element in answer:
+        
+        name = element["name"]
+        address = element["location"]["address"]
+        distance = element["distance"]
+        city = element['location']['locality']
+        category = query
+        lat = element["geocodes"]["main"]["latitude"]
+        lon = element["geocodes"]["main"]["longitude"]
+        
+        small_dict = {
+        "name": name,
+        "address": address,
+        "city" : city,
+        "category" : category,
+        "distance": distance,
+        "lat": lat,
+        "lon": lon}
+        
+        answer_list.append(small_dict)
+        
+    
+    df=pd.DataFrame(answer_list)
+    return df
+
+
+def queries_for_a_city (city_lat, city_lon, *query):
+    dfs = []
+    for i in list(query):
+        df = requests_for_foursquare (i, city_lat, city_lon, radius=500, limit=5)
+        dfs.append(df)
+    final_df = pd.concat(dfs, ignore_index=True)
+    return final_df  
+
+
+def requests_for_foursquare_relevance (query, lat, lon, radius=10000, limit=5):
+    token = os.getenv("token")
     url = f"https://api.foursquare.com/v3/places/search?query={query}&ll={lat}%2C{lon}&radius={radius}&limit={limit}"
 
     headers = {
@@ -53,12 +105,16 @@ def requests_for_foursquare (query, lat, lon, radius=700, limit=2):
         name = element["name"]
         address = element["location"]["address"]
         distance = element["distance"]
+        city = element['location']['locality']
+        category = query
         lat = element["geocodes"]["main"]["latitude"]
         lon = element["geocodes"]["main"]["longitude"]
         
         small_dict = {
         "name": name,
         "address": address,
+        "city" : city,
+        "category" : category,
         "distance": distance,
         "lat": lat,
         "lon": lon}
@@ -68,3 +124,4 @@ def requests_for_foursquare (query, lat, lon, radius=700, limit=2):
     
     df=pd.DataFrame(answer_list)
     return df
+

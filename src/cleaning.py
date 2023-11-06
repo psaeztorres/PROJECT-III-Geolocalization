@@ -67,7 +67,11 @@ def get_avg_coordinates (city,city_lat, city_lon, *df):
     result = clean_coord (result, city_lat, city_lon,radius=75)
     avg_lat= result['lat'].mean()
     avg_lon= result['lon'].mean()
-    return f"avg(lat) = {avg_lat}, avg_lon = {avg_lon}"
+    return (avg_lat,avg_lon)
+
+
+
+
 
 
 
@@ -83,3 +87,28 @@ def df_city_coordinates (city,city_lat, city_lon, *df):
     result = clean_coord (result, city_lat, city_lon,radius=100)
     return result
 
+
+def distance_venue_city (lista, df):
+    df['category'] = df['category'].replace({'Elementary School': 'school', 'Middle School': 'school'})
+    missing_categories = [cat for cat in lista if cat not in df['category'].unique()]
+
+    if not missing_categories:
+        # Calculate the average distance for each category
+        avg_distance = df.groupby('category')['distance'].mean()
+        quantity =df['category'].value_counts()
+        result = pd.DataFrame({"avg_dist":avg_distance, "category_qty" : quantity})
+        return result
+    else:
+        avg_distance = df.groupby('category')['distance'].mean()
+        quantity =df['category'].value_counts()
+        result = pd.DataFrame({"avg_dist":avg_distance, "category_qty" : quantity})
+        #print(f"The following categories are missing: {', '.join(missing_categories)}")
+        return result
+
+def one_venue_avg_distance (df):
+    
+        avg_distance = df.groupby('category')['distance'].mean()
+        quantity =df['category'].value_counts()
+        result = pd.DataFrame({"avg_dist":avg_distance, "category_qty" : quantity})
+        return result
+    
