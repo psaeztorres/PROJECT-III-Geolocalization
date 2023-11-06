@@ -111,4 +111,17 @@ def one_venue_avg_distance (df):
         quantity =df['category'].value_counts()
         result = pd.DataFrame({"avg_dist":avg_distance, "category_qty" : quantity})
         return result
-    
+
+def london_companies (df1,df2):
+    df = pd.merge(df1, df2, on=None, how='outer')
+    df.drop(['number_of_employees','founded_year','total_money_raised','city2'],axis=1, inplace=True)
+    df.replace('N/A', float('nan'), inplace=True)
+
+    df = df.dropna(subset=['lat', 'lon'])
+    df = clean_coord (df, 51.51689597746479, -0.1473155197183098,radius=30)
+    return df
+
+def merge_LND_info(companies_df, venues_df):
+    companies_df.rename(columns={'category_code': 'category', 'city1': 'city'}, inplace=True)
+    df = pd.merge(companies_df, venues_df, on=['name', 'city', 'category', 'lat', 'lon'], how='outer')
+    return df

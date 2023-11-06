@@ -1,0 +1,31 @@
+name,address,city,category,distance,lat,lon
+Starbucks,424 Park Ave S,New York,Starbucks,218,40.744205,-73.983713
+Starbucks,261 5th Ave,New York,Starbucks,224,40.744935,-73.986668
+Starbucks,1140 Broadway,New York,Starbucks,251,40.743963,-73.988682
+Starbucks,50 Lexington Ave,New York,Starbucks,326,40.740519,-73.984355
+Starbucks,304 Park Ave S,New York,Starbucks,340,40.740125,-73.98696
+Seven Grams Caffe,76 Madison Ave,New York,vegan restaurant,93,40.744034,-73.986065
+Hillstone,378 Park Ave S,New York,vegan restaurant,119,40.742555,-73.984871
+Eleven Madison Park,11 Madison Ave,New York,vegan restaurant,190,40.741488,-73.986445
+The Little Beet Table,333 Park Ave S,New York,vegan restaurant,236,40.741087,-73.985294
+Planta Queen,15 W 27th St,New York,vegan restaurant,237,40.744459,-73.988309
+Avenues The World School,11 E 26th St,New York,school,103,40.743409,-73.987219
+Avenues: The World School - World Headquarters,11 E 26th St,New York,school,118,40.743409,-73.987219
+Liquid Lab NYC,79 Madison Ave,New York,school,126,40.74416,-73.985371
+Unigo.com,386 Park Ave S,New York,school,126,40.742994,-73.984626
+Unigo School,368 Park Ave S,New York,school,148,40.74239,-73.984996
+Calamari Peter-Quinn Emanuel Urquhart Oliver,51 Madison Ave,New York,Pet Grooming,23,40.743004,-73.986243
+Pet Funeral & Cremation Service of NYC,244 5th Ave,New York,Pet Grooming,91,40.744034,-73.986065
+"Peter Raimondi, MD",373 Park Ave S,New York,Pet Grooming,169,40.742189,-73.984464
+Peter Bailey Company,401 Park Ave S,New York,Pet Grooming,182,40.74296,-73.983883
+Manhattan Pet Service,244 5th Ave,New York,Pet Grooming,219,40.744636,-73.987748
+OM Juice Bar,62 Madison Ave,New York,bar,45,40.743596,-73.98631
+Olde City Cheesesteaks & Brew,66 Madison Ave,New York,bar,52,40.743703,-73.986314
+Todd Snyder,25 E 26th St,New York,bar,78,40.742937,-73.986721
+Black Barn Restaurant,19 E 26th St,New York,bar,82,40.743359,-73.987086
+Dominique Ansel Workshop,17 E 27th St,New York,bar,86,40.743754,-73.986447
+Karaoke DJ Services,244 5th Ave,New York,karaoke,219,40.744636,-73.987748
+Ms Kim’s,6 W 28th St,New York,karaoke,280,40.744732,-73.988188
+Ace Hotel New York,20 W 29th St,New York,karaoke,348,40.745702,-73.988226
+Hill Country Barbecue Market,30 W 26th St,New York,karaoke,393,40.744239,-73.99044
+Base Karaoke,2 W 32nd St,New York,karaoke,441,40.74716,-73.986187

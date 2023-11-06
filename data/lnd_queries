@@ -1,0 +1,27 @@
+name,address,city,category,distance,lat,lon
+Starbucks,33 Cavendish Square,London,Starbucks,255,51.516025,-0.144089
+Starbucks,14 James St,London,Starbucks,321,51.514765,-0.150258
+Starbucks,1 - 2 Langham Pl,London,Starbucks,327,51.517606,-0.14267
+Starbucks,13b Hanover Square,London,Starbucks,341,51.514575,-0.143871
+Starbucks,381 Oxford St,London,Starbucks,364,51.51388,-0.149514
+Pet London,16 Wigmore St,Paddington,Pet Grooming,68,51.51681,-0.147001
+Peter H Fowler,1 Harley St,London,Pet Grooming,70,51.516953,-0.146297
+Peter Moule London,10 Harley St,London,Pet Grooming,101,51.517341,-0.146037
+Peter Goldsmith LLP,14 Harley St,London,Pet Grooming,112,51.517607,-0.14615
+Peter Bartlett London,2 Harley St,London,Pet Grooming,117,51.517089,-0.14564
+Delamina,56-58 Marylebone Lane,London,vegan restaurant,208,51.5164,-0.149997
+Artesian,1C Portland Pl,Marylebone,vegan restaurant,267,51.517801,-0.143733
+Market Hall West End,9 Holles St,London,vegan restaurant,272,51.515606,-0.143794
+Palm Court,1c Portland Pl,London,vegan restaurant,277,51.517147,-0.143224
+Sofra,1 St Christopher's Pl,London,vegan restaurant,280,51.515206,-0.150082
+St Vincent's RC Primary School,11 St. Vincent St,London,Middle School,306,51.518555,-0.152535
+St Vincent's RC Primary School,11 St. Vincent St,London,Elementary School,306,51.518555,-0.152535
+"UK College for Health, Medical & Research",85a Great Portland St,London,Elementary School,388,51.518432,-0.142351
+Nanis Restaurant & Sandwich Bar,8-10 Wigmore St,City of Westminster,bar,26,51.51681,-0.147001
+2 Veneti,10 Wigmore St,London,bar,49,51.516879,-0.146684
+Wigmore Hall,36 Wigmore St,Marylebone,bar,69,51.516884,-0.148439
+Les 110 de Taillevent,16 Cavendish Square,London,bar,105,51.517081,-0.145829
+Be at One,94 Wimpole St,London,bar,106,51.515975,-0.147508
+Karaokebox,18 Frith St,London,karaoke,232,51.518955,-0.146247
+The Social,5 Little Portland St,London,karaoke,451,51.517376,-0.140611
+The Riding House Café,43-51 Great Titchfield St,London,karaoke,494,51.518348,-0.140662
